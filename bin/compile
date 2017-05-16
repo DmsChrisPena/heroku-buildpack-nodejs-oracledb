@@ -10,7 +10,7 @@ indent() {
 }
 
 # VENDOR_DIR=$BUILD_DIR/vendor
-ORACLE_DIR=/oracle
+ORACLE_DIR=app/oracle
 INSTANTCLIENT_DIR=$ORACLE_DIR/instantclient_12_1
 PROFILE_D_DIR=$BUILD_DIR/.profile.d
 
