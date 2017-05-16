@@ -22,22 +22,23 @@ MIRROR=http://michaelbuhler.com
 # if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
     wget http://download.oracle.com/otn/linux/instantclient/122010/instantclient-basic-linux.x64-12.2.0.1.0.zip?AuthParam=1494895785_c438ebd46e0ab8ffc8721dcf86f2dd54
-    unzip instantclient-basic-linux.x64-12.2.0.1.0.zip
+    unzip -qq instantclient-basic-linux.x64-12.2.0.1.0.zip -d $ORACLE_DIR
+
 #     curl -# -o $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
 # fi
 
 # if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     indent "Downloading $SDK_FILENAME..."
     wget http://download.oracle.com/otn/linux/instantclient/122010/instantclient-sdk-linux.x64-12.2.0.1.0.zip?AuthParam=1494896027_e835347d5fa334f51a2929a2cafe9c09
-    unzip instantclient-sdk-linux.x64-12.2.0.1.0.zip
+    unzip -qq instantclient-sdk-linux.x64-12.2.0.1.0.zip -d $ORACLE_DIR
     # curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
 # fi
 
 mkdir -p $ORACLE_DIR
-indent "Extracting $BASIC_FILENAME..."
-unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
-indent "Extracting $SDK_FILENAME..."
-unzip -qq $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
+# indent "Extracting $BASIC_FILENAME..."
+# unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
+# indent "Extracting $SDK_FILENAME..."
+# unzip -qq $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
 ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
