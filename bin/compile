@@ -21,7 +21,7 @@ MIRROR=http://michaelbuhler.com
 
 # if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
-    wget http://download.oracle.com/otn/linux/instantclient/122010/instantclient-basic-linux.x64-12.2.0.1.0.zip
+    wget https://www.dropbox.com/s/xqi8pqm9r4uwrsb/instantclient-basic-linux.x64-12.2.0.1.0.zip?dl=1
     unzip -qq instantclient-basic-linux.x64-12.2.0.1.0.zip -d $ORACLE_DIR
 
 #     curl -# -o $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
@@ -29,7 +29,7 @@ MIRROR=http://michaelbuhler.com
 
 # if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     indent "Downloading $SDK_FILENAME..."
-    wget http://download.oracle.com/otn/linux/instantclient/122010/instantclient-sdk-linux.x64-12.2.0.1.0.zip
+    wget https://www.dropbox.com/s/rwb1vjoqo5fe52m/instantclient-sdk-linux.x64-12.2.0.1.0.zip?dl=1
     unzip -qq instantclient-sdk-linux.x64-12.2.0.1.0.zip -d $ORACLE_DIR
     # curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
 # fi
