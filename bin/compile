@@ -23,7 +23,8 @@ PROFILE_D_DIR=$BUILD_DIR/.profile.d
 mkdir -p $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
-ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
+# ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
+ln -s libclntsh.dylib.12.1 $INSTANTCLIENT_DIR/libclntsh.dylib
 
 export OCI_LIB_DIR=$INSTANTCLIENT_DIR
 export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
@@ -31,7 +32,7 @@ export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 indent "Installing oracledb from npm..."
 THIS_DIR=`pwd`
 cd $BUILD_DIR
-npm install oracledb
+npm install oracledb -g
 cd $THIS_DIR
 
 indent "Saving environment setup script..."
